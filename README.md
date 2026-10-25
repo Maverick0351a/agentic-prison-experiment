@@ -63,6 +63,6 @@ The first pilot has a strong ceiling: participants often quoted the applicable r
 - `scripts/` — validated whitelist exports from the private scored runs.
 - `tests/` — offline checks for the benchmark and export.
 
-No real people, customer data, external targets, or physical actions were part of the pilot. The code and data are provided for inspection and controlled local experiments, not as a claim about human psychology.
+Every event is synthetic; no customer data or external targets were involved.
 
 Licensed under [Apache-2.0](LICENSE). See [CONTRIBUTING.md](CONTRIBUTING.md) for result and evidence guidelines.

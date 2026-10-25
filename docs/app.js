@@ -86,7 +86,10 @@
 
   function renderLimits() {
     const list = byId("limits-list");
-    const limits = Array.isArray(data.limitations) ? data.limitations : [];
+    // The public pack keeps its original audit note; the page states this scope once below.
+    const limits = Array.isArray(data.limitations)
+      ? data.limitations.filter((limit) => limit !== "This is a bounded AI model experiment, not a replication of human behavior.")
+      : [];
     list.replaceChildren(...limits.map((limit) => element("li", null, limit)));
   }
 

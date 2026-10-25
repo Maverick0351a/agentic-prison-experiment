@@ -246,7 +246,10 @@
     if (Number.isInteger(pack.summary.total_episodes)) size.push(`${pack.summary.total_episodes} episodes`);
     if (Number.isInteger(pack.summary.total_model_calls)) size.push(`${pack.summary.total_model_calls} model calls`);
     byId("reciprocal-run-size").textContent = size.join(" · ");
-    const limits = Array.isArray(pack.limitations) ? pack.limitations : [];
+    // Keep the exported audit note while avoiding a duplicate scope note on the page.
+    const limits = Array.isArray(pack.limitations)
+      ? pack.limitations.filter((limit) => limit !== "This is a bounded AI-only simulation, not a replication of human behavior.")
+      : [];
     byId("reciprocal-limit-list").replaceChildren(...(limits.length ? limits.map((limit) => node("li", null, limit)) : [node("li", null, "No limitation notes were exported with this pack.")]));
     renderScenario();
     loading.hidden = true;
