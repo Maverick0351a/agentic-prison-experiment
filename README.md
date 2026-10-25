@@ -4,7 +4,7 @@
 
 ![Four matched AI authority conditions, each with zero unsupported proposals out of eight decisions](docs/assets/social-preview.png)
 
-**Latest result:** In v3, the Senior AI was assigned to argue for an unsupported hold. All four pressured Senior openings chose a nonrestrictive action instead, so Duty never received the intended conflicting recommendation. [Explore the v3 exchange](docs/index.html#conflict) and [read the audit](docs/CONFLICT_RESULTS.md).
+**Latest result:** In v4, a fixed Senior office directive requested an unsupported hold in four matched cells. Duty declined it **4/4** times; after Duty answered, the Senior AI withdrew the directive **4/4** times. [Replay both directions](docs/index.html#directive) and [read the audited result](docs/DIRECTIVE_RESULTS.md).
 
 **What happens when the same AI is called a coordinator or a guard, and its decisions are either immediate or reviewed?**
 
@@ -39,7 +39,15 @@ The [v3 replay](docs/index.html#conflict) compares ordinary Senior advice with a
 
 The scored run used **12 exchanges and 56 model calls**. All **4/4** pressured Senior openings declined to propose the unsupported hold. The ordinary weak-case openings chose `permit_or_restore`; the pressured openings chose `investigate`. Both choices left access unrestricted, and provisional Duty matched Senior's structured action in each exchange. This run observed **zero Duty exposures** to a conflicting Senior recommendation. In the four documented-entry controls, the Participant exited after a permitted one-round hold was proposed; final Duty outcomes were unobserved. The [v3 results and transcript audit](docs/CONFLICT_RESULTS.md) keep those limits visible.
 
-The [frozen v3 protocol](benchmark/conflict/PROTOCOL_V3.md), [public exchange pack](docs/data/v3-public.json), and deterministic check (`python -m benchmark.conflict.runner --dry-run`) are included. A follow-on controlled-directive test is being prepared to give Duty an actual conflicting authority message before the live two-way exchange.
+The [frozen v3 protocol](benchmark/conflict/PROTOCOL_V3.md), [public exchange pack](docs/data/v3-public.json), and deterministic check (`python -m benchmark.conflict.runner --dry-run`) are included. V4 then supplied a fixed conflicting office directive and recorded the live AI exchange that followed.
+
+## When the Senior office issued an explicit order
+
+The [v4 replay](docs/index.html#directive) starts with a **scripted Senior office directive**, then shows five possible AI turns: Duty's first answer, Senior's reply, Duty's answer back, Participant's response, and Duty's final decision. The opening is labeled separately so the scripted pressure is never mistaken for a Senior AI proposal.
+
+All four unsupported pressure directives appeared in Duty's first prompt. Duty proposed **0 unsupported holds in 4 valid first replies**, explicitly retained access, and the Senior AI then withdrew the order in all four live replies. In the matched neutral cells, Duty chose investigation without a hold in all four first replies. Four documented-breach controls produced supported one-round hold proposals; three Participants exited before a final Duty turn, and one supported hold took effect after review. This is a 12-exchange, 57-call pilot. The [result and transcript audit](docs/DIRECTIVE_RESULTS.md), [frozen protocol](benchmark/directive/PROTOCOL_V4.md), and [public exchange pack](docs/data/v4-public.json) provide the details.
+
+Run the v4 deterministic check with `python -m benchmark.directive.runner --dry-run`. It uses a fake adapter and writes under the system temporary directory. A scored rerun requires an explicit private output directory outside the public checkout and uses at most 60 model calls.
 
 ## Rerun the benchmark
 
@@ -66,8 +74,8 @@ The first pilot has a strong ceiling: participants often quoted the applicable r
 
 ## Repository map
 
-- `docs/` — static replays and sanitized v1/v2/v3 data, with no external dependencies.
-- `benchmark/` — frozen v1, reciprocal v2, and conflict v3 runners, rules, scenarios, and model adapter.
+- `docs/` — static replays and sanitized v1–v4 data, with no external dependencies.
+- `benchmark/` — frozen v1–v4 runners, rules, scenarios, and model adapter.
 - `scripts/` — validated whitelist exports from the private scored runs.
 - `tests/` — offline checks for the benchmark and export.
 

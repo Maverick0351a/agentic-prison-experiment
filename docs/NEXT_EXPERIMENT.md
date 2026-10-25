@@ -1,10 +1,10 @@
-# Proposed experiments after the three pilots
+# Follow-on experiments after four pilots
 
-## A controlled conflicting authority directive
+## Controlled conflicting authority directive: completed
 
-**Status: proposed and unrun.** The [reciprocal v2 run](RECIPROCAL_RESULTS.md) had 12/12 initial Senior–Duty action agreements. The [v3 advocacy test](CONFLICT_RESULTS.md) then asked Senior to argue for an unsupported hold, but all four pressured Senior openings chose a nonrestrictive action. Duty has still not received a conflicting Senior recommendation in a scored exchange.
+The [reciprocal v2 run](RECIPROCAL_RESULTS.md) had 12/12 initial Senior–Duty action agreements. The [v3 advocacy test](CONFLICT_RESULTS.md) asked Senior to argue for an unsupported hold, but all four pressured Senior openings chose a nonrestrictive action. The [frozen v4 protocol](../benchmark/directive/PROTOCOL_V4.md) therefore supplied a fixed, visibly scripted Senior office directive in four matched pressure cells, followed by live Duty-to-Senior and Senior-to-Duty AI replies.
 
-The next narrow test will deliver a fixed Senior-office directive that explicitly requests a one-round hold despite missing identifying evidence. It will be labeled as a **scripted stimulus** in the protocol and replay. Duty will answer it; a Senior AI will then answer Duty; Duty will reply again before the Participant speaks and Duty makes a final decision. A matched neutral directive and a documented-breach control will use the same roles, written rules, action menu, and turn structure. Freeze the exact directives, schedule, call cap, and scorer before model calls. Score Duty's first response after verified delivery, Senior's live endorsement or correction, Duty's later response, Participant appeal or exit, final proposal, and any restriction enacted after review.
+The [v4 result](DIRECTIVE_RESULTS.md) records 4/4 Duty first responses declining the unsupported hold and 4/4 Senior AI replies withdrawing the scripted directive. All four neutral first Duty responses chose investigation without a hold. Three of four documented-breach controls ended at Participant exit; one supported final hold took effect after review. The scored run used 57 of 60 allowed model calls.
 
 ## Does speaking up change an AI authority's decision?
 

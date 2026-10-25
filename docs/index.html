@@ -7,12 +7,15 @@
   <meta name="description" content="The Agentic Prison Experiment is an independent AI authority simulation inspired by the Stanford Prison Experiment. Explore four matched conditions and inspect every scored decision.">
   <title>The Agentic Prison Experiment — AI Authority Simulation</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <script src="data.js" defer></script>
   <script src="app.js" defer></script>
   <script src="data-v2.js" defer></script>
   <script src="reciprocal.js" defer></script>
   <script src="data-v3.js" defer></script>
   <script src="conflict.js" defer></script>
+  <script src="data-v4.js" defer></script>
+  <script src="directive.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -26,7 +29,8 @@
       <nav aria-label="Main navigation">
         <a href="#replay">Replay</a>
         <a href="#reciprocal">Dialogue</a>
-        <a href="#conflict">Pressure</a>
+        <a href="#conflict" aria-label="V3 authority pressure test">V3</a>
+        <a href="#directive" aria-label="V4 controlled directive test">V4</a>
         <a href="#findings">Findings</a>
         <a href="#method">Method</a>
       </nav>
@@ -43,7 +47,7 @@
           <p class="hero-lede">An AI authority simulation inspired by the Stanford Prison Experiment. Give an AI authority, change its role label, add independent review. Does it propose a restriction the written rules cannot support?</p>
           <div class="hero-actions">
             <a class="button button-light" href="#replay">Explore the decisions <span aria-hidden="true">↗</span></a>
-            <a class="text-link light-link" href="#conflict">Explore the pressure test <span aria-hidden="true">→</span></a>
+            <a class="text-link light-link" href="#directive">Watch the agents answer back <span aria-hidden="true">→</span></a>
           </div>
           <p class="hero-boundary">Independent project · Unaffiliated with Stanford University.</p>
         </div>
@@ -253,6 +257,48 @@
             </ul>
           </aside>
           <p class="replay-footnote">Inspect all observed turns in the <a href="data/v3-public.json" download>v3 public exchange pack</a> and read the <a href="https://github.com/Maverick0351a/agentic-prison-experiment/blob/main/benchmark/conflict/PROTOCOL_V3.md">frozen benchmark protocol</a>.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="directive-section" id="directive" aria-labelledby="directive-title">
+      <div class="shell">
+        <div class="directive-intro">
+          <div><p class="section-kicker">Controlled directive / v4</p><h2 id="directive-title">What if the order is explicit?</h2></div>
+          <p>A fixed Senior office directive opens each exchange. Duty answers it, the Senior AI replies, and Duty answers back before the Participant speaks.</p>
+        </div>
+        <div class="directive-origin" aria-label="Opening message provenance">
+          <div><span class="directive-origin-number">0</span><strong>Scripted stimulus</strong><p>The fixed opening directive is included in the public history for each observed agent call.</p></div>
+          <span class="directive-origin-arrow" aria-hidden="true">→</span>
+          <div><span class="directive-origin-number">1–5</span><strong>AI model calls</strong><p>Duty, Senior, and Participant generate the later replies in sequence.</p></div>
+        </div>
+        <p class="directive-loading" id="directive-loading" role="status">The v4 protocol is frozen. The scored replay will appear here after the run and public export are reviewed. <a href="https://github.com/Maverick0351a/agentic-prison-experiment/blob/main/benchmark/directive/PROTOCOL_V4.md">Read the protocol</a>.</p>
+        <div id="directive-content" hidden>
+          <div class="directive-finding" id="directive-finding" hidden><span class="scene-tag">Verified in Duty prompt</span><h3 id="directive-finding-title"></h3><p id="directive-finding-detail"></p></div>
+          <div class="directive-controls">
+            <div class="field"><label for="directive-scenario">Choose a case</label><select id="directive-scenario"></select></div>
+            <div class="field"><label for="directive-condition">Choose role labels and review</label><select id="directive-condition"></select></div>
+            <p class="directive-run-size" id="directive-run-size"></p>
+          </div>
+          <div class="directive-case"><span class="scene-tag">Shared case and written rule</span><h3 id="directive-case-title"></h3><p id="directive-event"></p><div><span class="rule-label">Written rule</span><p id="directive-rule"></p></div></div>
+          <div class="directive-panel">
+            <div class="directive-stage-head"><div><span class="scene-tag" id="directive-stage-count">Before the opening</span><h3 id="directive-stage-title" aria-live="polite">Reveal the fixed directive.</h3><p id="directive-stage-description">The first message is scripted scenario text. The agents' replies begin with Duty's provisional response.</p></div><span id="directive-progress" class="directive-progress">0 of 6 turns revealed</span></div>
+            <ol class="directive-stepper" id="directive-stepper" aria-label="Directive exchange turns"></ol>
+            <fieldset class="directive-prediction" id="directive-prediction" hidden>
+              <legend>Predict Duty's first response</legend>
+              <p id="directive-prediction-target"></p>
+              <div class="directive-prediction-options">
+                <label><input type="radio" name="directive-prediction" value="restriction"><span>Propose a hold</span></label>
+                <label><input type="radio" name="directive-prediction" value="no_restriction"><span>Choose no hold</span></label>
+                <label><input type="radio" name="directive-prediction" value="unobserved"><span>No Duty response recorded</span></label>
+              </div>
+            </fieldset>
+            <p class="directive-prediction-result" id="directive-prediction-result" role="status" hidden></p>
+            <div class="directive-grid" id="directive-cards"></div>
+            <div class="directive-actions"><button class="button button-dark" id="directive-next" type="button">Reveal scripted opening</button><button class="button button-plain" id="directive-reset" type="button" hidden>Start over</button></div>
+          </div>
+          <aside class="directive-reading" aria-labelledby="directive-reading-title"><h3 id="directive-reading-title">What the replay separates</h3><ul><li>The opening directive is a scripted stimulus. Later messages marked “AI model call” are generated responses.</li><li>The first Duty response is provisional; only Duty's final proposal can take effect.</li><li>Exit or an incomplete exchange leaves later turns unobserved and has no final Duty score.</li></ul></aside>
+          <p class="replay-footnote">Inspect the <a href="data/v4-public.json" download>v4 public exchange pack</a>, <a href="https://github.com/Maverick0351a/agentic-prison-experiment/blob/main/docs/DIRECTIVE_RESULTS.md">v4 results report</a>, and <a href="https://github.com/Maverick0351a/agentic-prison-experiment/blob/main/benchmark/directive/PROTOCOL_V4.md">frozen v4 protocol</a>.</p>
         </div>
       </div>
     </section>

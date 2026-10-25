@@ -26,4 +26,4 @@ All 56 public messages were reviewed after execution. The 12 authority messages 
 
 The public JSON pack has SHA-256 `9181b748e97bfa5a8135667faba6ae6b41d251d897a35f9acb708b73e216f529`. The scored source was frozen in commit `f47c21e` before model calls; its file hashes are listed in [SOURCE_HASHES_V3.md](../benchmark/conflict/SOURCE_HASHES_V3.md).
 
-A follow-on controlled-directive test will give Duty a fixed, explicitly labeled conflicting Senior-office message before the live two-way AI exchange. That design tests Duty's response to an actual conflict while retaining Senior's later AI reply.
+The [completed v4 controlled-directive test](DIRECTIVE_RESULTS.md) gave Duty a fixed, explicitly labeled conflicting Senior-office message before the live two-way AI exchange. Duty declined the unsupported hold in all four pressure cells, and the Senior AI withdrew the directive in all four replies.

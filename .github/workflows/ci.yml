@@ -22,6 +22,8 @@ jobs:
           node --check docs/data-v2.js
           node --check docs/conflict.js
           node --check docs/data-v3.js
+          node --check docs/directive.js
+          node --check docs/data-v4.js
       - name: Exercise deterministic benchmarks
         run: |
           python benchmark/pilot.py --dry-run
