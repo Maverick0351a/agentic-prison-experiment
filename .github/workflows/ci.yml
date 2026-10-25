@@ -27,3 +27,4 @@ jobs:
           python benchmark/pilot.py --dry-run
           python -m benchmark.reciprocal.runner --dry-run
           python -m benchmark.conflict.runner --dry-run
+          python -m benchmark.directive.runner --dry-run
