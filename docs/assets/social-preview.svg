@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="640" viewBox="0 0 1280 640" role="img" aria-labelledby="title description">
+  <title id="title">The Agentic Prison Experiment</title>
+  <desc id="description">A dark green social preview for an AI authority simulation. Four matched conditions each recorded zero unsupported restriction proposals out of eight valid authority decisions.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#142724"/><stop offset="1" stop-color="#24443b"/></linearGradient>
+    <radialGradient id="glow"><stop offset="0" stop-color="#e9b66d" stop-opacity=".20"/><stop offset="1" stop-color="#e9b66d" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect width="1280" height="640" fill="url(#background)"/>
+  <circle cx="1170" cy="20" r="410" fill="url(#glow)"/>
+  <rect x="53" y="53" width="21" height="21" rx="3" fill="#126b5b"/>
+  <rect x="81" y="53" width="21" height="21" rx="3" fill="#d76d52"/>
+  <rect x="53" y="81" width="21" height="21" rx="3" fill="#f0be66"/>
+  <rect x="81" y="81" width="21" height="21" rx="3" fill="#dcefe8"/>
+  <text x="123" y="83" fill="#d8e7dc" font-family="Arial, sans-serif" font-size="25" font-weight="700">AI AUTHORITY SIMULATION</text>
+  <rect x="54" y="148" width="45" height="4" rx="2" fill="#d76d52"/>
+  <text x="54" y="220" fill="#ffffff" font-family="Georgia, serif" font-size="63" font-weight="700">The Agentic</text>
+  <text x="54" y="298" fill="#f0be66" font-family="Georgia, serif" font-size="53" font-weight="700">Prison Experiment</text>
+  <text x="57" y="357" fill="#d3e2d8" font-family="Arial, sans-serif" font-size="26">Same facts. Different power. Inspect every decision.</text>
+  <rect x="54" y="407" width="607" height="110" rx="15" fill="#2c4a41" stroke="#5d8070"/>
+  <text x="80" y="448" fill="#b8d9c8" font-family="Arial, sans-serif" font-size="18" font-weight="700" letter-spacing="2">THE FIRST RESULT</text>
+  <text x="80" y="490" fill="#ffffff" font-family="Georgia, serif" font-size="27" font-weight="700">0 / 8 unsupported in every cell</text>
+  <text x="54" y="581" fill="#aec8ba" font-family="Arial, sans-serif" font-size="19">AI agents only  ·  4 conditions  ·  8 episodes</text>
+  <g transform="translate(720 128)">
+    <rect x="0" y="0" width="506" height="390" rx="24" fill="#23443b" stroke="#749085"/>
+    <text x="29" y="44" fill="#c0d8c9" font-family="Arial, sans-serif" font-size="17" font-weight="700" letter-spacing="2">MATCHED CONDITIONS</text>
+    <g font-family="Arial, sans-serif">
+      <rect x="25" y="73" width="218" height="130" rx="13" fill="#30574a" stroke="#709586"/>
+      <text x="43" y="101" fill="#c0d8c9" font-size="15">COORDINATOR · DIRECT</text>
+      <text x="43" y="166" fill="#fff" font-family="Georgia, serif" font-size="56" font-weight="700">0 / 8</text>
+      <rect x="263" y="73" width="218" height="130" rx="13" fill="#30574a" stroke="#709586"/>
+      <text x="281" y="101" fill="#c0d8c9" font-size="15">COORDINATOR · REVIEW</text>
+      <text x="281" y="166" fill="#fff" font-family="Georgia, serif" font-size="56" font-weight="700">0 / 8</text>
+      <rect x="25" y="220" width="218" height="130" rx="13" fill="#30574a" stroke="#709586"/>
+      <text x="43" y="248" fill="#c0d8c9" font-size="15">GUARD · DIRECT</text>
+      <text x="43" y="313" fill="#fff" font-family="Georgia, serif" font-size="56" font-weight="700">0 / 8</text>
+      <rect x="263" y="220" width="218" height="130" rx="13" fill="#30574a" stroke="#709586"/>
+      <text x="281" y="248" fill="#c0d8c9" font-size="15">GUARD · REVIEW</text>
+      <text x="281" y="313" fill="#fff" font-family="Georgia, serif" font-size="56" font-weight="700">0 / 8</text>
+    </g>
+  </g>
+  <text x="722" y="581" fill="#aec8ba" font-family="Arial, sans-serif" font-size="16">Independent project · Unaffiliated with Stanford University</text>
+</svg>

@@ -1,0 +1,26 @@
+name: Offline checks
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Run offline tests
+        run: python -m unittest discover -s tests -v
+      - name: Check browser script syntax
+        run: |
+          node --check docs/app.js
+          node --check docs/reciprocal.js
+          node --check docs/data.js
+          node --check docs/data-v2.js
+      - name: Exercise deterministic benchmarks
+        run: |
+          python benchmark/pilot.py --dry-run
+          python -m benchmark.reciprocal.runner --dry-run

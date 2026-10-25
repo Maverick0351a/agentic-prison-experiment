@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="description" content="The Agentic Prison Experiment is an independent AI authority simulation inspired by the Stanford Prison Experiment. Explore four matched conditions and inspect every scored decision.">
+  <title>The Agentic Prison Experiment — AI Authority Simulation</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="data.js" defer></script>
+  <script src="app.js" defer></script>
+  <script src="data-v2.js" defer></script>
+  <script src="reciprocal.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="#top" aria-label="The Agentic Prison Experiment home">
+        <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+        <span>The Agentic <strong>Prison Experiment</strong></span>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="#replay">Replay</a>
+        <a href="#reciprocal">Dialogue</a>
+        <a href="#findings">Findings</a>
+        <a href="#method">Method</a>
+      </nav>
+      <span class="header-note">No key needed to explore</span>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="shell hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="eyebrow-line" aria-hidden="true"></span> Who guards the guardrails?</p>
+          <h1 id="hero-title">The Agentic <em>Prison Experiment</em></h1>
+          <p class="hero-lede">An AI authority simulation inspired by the Stanford Prison Experiment. Give an AI authority, change its role label, add independent review. Does it propose a restriction the written rules cannot support?</p>
+          <div class="hero-actions">
+            <a class="button button-light" href="#replay">Explore the decisions <span aria-hidden="true">↗</span></a>
+            <a class="text-link light-link" href="#method">See how it worked <span aria-hidden="true">→</span></a>
+          </div>
+          <p class="hero-boundary">Independent project; unaffiliated with Stanford University; no human-behavior claim. Fictional setting and AI agents only.</p>
+        </div>
+        <div class="hero-visual" aria-label="Four matched conditions and one shared policy">
+          <div class="visual-topline"><span>V1 / MATCHED CONDITIONS</span><span class="live-dot" aria-hidden="true"></span></div>
+          <div class="visual-question">Same facts.<br><span>Different power.</span></div>
+          <div class="visual-matrix" aria-hidden="true">
+            <div><span>COORDINATOR</span><strong>Direct</strong><i></i></div>
+            <div><span>COORDINATOR</span><strong>Review</strong><i></i></div>
+            <div><span>GUARD</span><strong>Direct</strong><i></i></div>
+            <div><span>GUARD</span><strong>Review</strong><i></i></div>
+          </div>
+          <div class="visual-footer"><span>4 role × governance cells</span><span>⇢</span><span>1 frozen rulebook</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="result-strip" aria-labelledby="result-title">
+      <div class="shell">
+        <div class="result-intro">
+          <div>
+            <p class="section-kicker">Pilot v1 / first result</p>
+            <h2 id="result-title">The four conditions all scored zero.</h2>
+          </div>
+          <p>In this small pilot, all four conditions recorded <strong>zero unsupported restriction proposals</strong>. That is an observation, not proof that labels or oversight never matter.</p>
+        </div>
+        <div class="score-grid" id="score-grid" aria-label="Unsupported proposals by condition">
+          <p class="loading">Loading the public run pack…</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="replay-section shell" id="replay" aria-labelledby="replay-title">
+      <div class="section-heading">
+        <p class="section-kicker">Pilot v1 / explore the evidence</p>
+        <h2 id="replay-title">Predict first. Then reveal all four.</h2>
+        <p>The same dilemmas went to every condition. Choose one, make your prediction, and compare the agents' actual proposals with the written rule.</p>
+      </div>
+
+      <div class="replay-panel">
+        <div class="step-label"><span>01</span> Select an incident</div>
+        <div class="selectors">
+          <div class="field">
+            <label for="block-select">Event order</label>
+            <select id="block-select"><option value="0">Order A</option><option value="1">Order B</option></select>
+          </div>
+          <div class="field field-wide">
+            <label for="scenario-select">Dilemma</label>
+            <select id="scenario-select"></select>
+          </div>
+        </div>
+        <div class="scene">
+          <span class="scene-tag">The situation · neutral wording</span>
+          <h3 id="scene-title">Loading scenario…</h3>
+          <p id="scene-event"></p>
+        </div>
+
+        <fieldset class="prediction" id="prediction-fieldset">
+          <legend><span class="step-label"><span>02</span> What will the authority propose?</span></legend>
+          <p>Make one prediction for the four conditions. The evidence and rule appear after you reveal.</p>
+          <div class="prediction-options">
+            <label><input type="radio" name="prediction" value="permit_or_restore"><span>Allow or restore</span></label>
+            <label><input type="radio" name="prediction" value="investigate"><span>Investigate</span></label>
+            <label><input type="radio" name="prediction" value="temporary_restriction"><span>One-round hold</span></label>
+            <label><input type="radio" name="prediction" value="extended_restriction"><span>Longer restriction</span></label>
+            <label><input type="radio" name="prediction" value="refer_for_review"><span>Refer for review</span></label>
+          </div>
+        </fieldset>
+
+        <div class="replay-actions">
+          <button class="button button-dark" id="reveal-button" type="button" disabled>Reveal the four decisions <span aria-hidden="true">→</span></button>
+          <button class="button button-plain" id="skip-button" type="button">Skip prediction</button>
+        </div>
+      </div>
+
+      <div class="reveal" id="reveal" hidden>
+        <div class="reveal-topline">
+          <div>
+            <p class="section-kicker">03 / The comparison</p>
+            <h3 id="reveal-heading" tabindex="-1">What the agents did</h3>
+          </div>
+          <p id="prediction-result" class="prediction-result" role="status" aria-live="polite"></p>
+        </div>
+        <div class="rule-panel">
+          <div class="rule-icon" aria-hidden="true">§</div>
+          <div><span class="rule-label">The frozen rule and case key</span><p id="rule-text"></p></div>
+        </div>
+        <div class="condition-grid" id="condition-grid"></div>
+        <p class="replay-footnote">The public pack contains only synthetic agent statements and scored decisions. <a href="data/v1-public.json" download>Download the data pack</a> to inspect every episode.</p>
+      </div>
+      <div id="data-error" class="data-error" role="alert" hidden></div>
+    </section>
+
+    <section class="reciprocal-section" id="reciprocal" aria-labelledby="reciprocal-title">
+      <div class="shell">
+        <div class="reciprocal-intro">
+          <div>
+            <p class="section-kicker">Follow-on protocol / v2</p>
+            <h2 id="reciprocal-title">Follow the conversation, turn by turn.</h2>
+          </div>
+          <p>A senior authority recommends, a duty authority responds, the participant replies, and both authorities may answer again. Explore five possible stages across four matched conditions. The roles stay the same throughout each exchange.</p>
+        </div>
+        <p class="reciprocal-separation">This is a separate three-dilemma run. Its scores are not pooled with the v1 pilot above.</p>
+        <aside class="reciprocal-audit" aria-labelledby="reciprocal-audit-title">
+          <div>
+            <span class="scene-tag">Transcript audit</span>
+            <h3 id="reciprocal-audit-title">What the messages add</h3>
+          </div>
+          <ul>
+            <li>In both review-condition appeal exchanges, the final Duty messages made lifting the prior hold sound subject to software review. The frozen rule reviews proposed restrictions only. Their structured restore choices do not establish clean restoration.</li>
+            <li>The initial Senior and provisional Duty actions agreed in all 12 exchanges. This run did not observe how Duty would respond to a conflicting Senior recommendation.</li>
+          </ul>
+        </aside>
+        <p class="reciprocal-loading" id="reciprocal-loading" role="status">Loading the v2 public exchange pack…</p>
+
+        <div id="reciprocal-content" hidden>
+          <div class="reciprocal-toolbar">
+            <div class="field">
+              <label for="reciprocal-scenario">Choose a dilemma</label>
+              <select id="reciprocal-scenario"></select>
+            </div>
+            <p id="reciprocal-run-size" class="reciprocal-run-size"></p>
+          </div>
+          <div class="reciprocal-context">
+            <span class="scene-tag">The case</span>
+            <h3 id="reciprocal-scenario-title"></h3>
+            <p>Each condition uses its own role labels. Open a card to read its exact incident text and all turns that were observed.</p>
+          </div>
+          <ol class="reciprocal-stepper" id="reciprocal-stepper" aria-label="Exchange turns"></ol>
+          <div class="reciprocal-stage-heading">
+            <span class="scene-tag" id="reciprocal-stage-count"></span>
+            <h3 id="reciprocal-stage-title" aria-live="polite"></h3>
+          </div>
+          <div class="rule-panel reciprocal-rule">
+            <div class="rule-icon" aria-hidden="true">§</div>
+            <div><span class="rule-label">Frozen rule and case key</span><p id="reciprocal-rule-text"></p></div>
+          </div>
+          <div class="reciprocal-grid" id="reciprocal-cards"></div>
+          <aside class="reciprocal-limits" aria-labelledby="reciprocal-limits-title">
+            <h3 id="reciprocal-limits-title">What this exchange can show</h3>
+            <ul id="reciprocal-limit-list"></ul>
+          </aside>
+          <p class="replay-footnote">Read the frozen v2 protocol in the repository and <a href="data/v2-public.json" download>download the public exchange pack</a>. Missing turns and stopped exchanges remain visible as such.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="findings-section" id="findings" aria-labelledby="findings-title">
+      <div class="shell">
+        <p class="section-kicker">Pilot v1 / what stood out</p>
+        <h2 id="findings-title">A useful baseline, not a verdict.</h2>
+        <div class="finding-grid">
+          <article class="finding-card"><span class="finding-num">01</span><h3>No observed label split</h3><p>Changing <em>Coordinator / Resident</em> to <em>Guard / Prisoner</em> did not change the structured authority choice in these matched episodes.</p></article>
+          <article class="finding-card"><span class="finding-num">02</span><h3>Order may matter</h3><p>All four cells investigated the weak allegation when it came first, and allowed or restored when it followed other dilemmas. Two orders cannot establish why.</p></article>
+          <article class="finding-card"><span class="finding-num">03</span><h3>Policy was easy to see</h3><p>The rulebook was explicit, and participants often cited the right rule before the authority decided. A harder follow-up should test that coaching separately.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="method-section shell" id="method" aria-labelledby="method-title">
+      <div class="method-main">
+        <p class="section-kicker">Pilot v1 / method & limits</p>
+        <h2 id="method-title">A small study with its workings open.</h2>
+        <p>One named model played both roles through fresh, isolated calls. Four dilemmas appeared in two matched orders under four role-and-governance conditions. A fixed software reviewer checked proposed restrictions in the review conditions; the primary score counted the proposal before that check.</p>
+        <div class="method-metrics" aria-label="Study size"><div><strong>4</strong><span>conditions</span></div><div><strong>8</strong><span>episodes</span></div><div><strong>64</strong><span>model calls</span></div><div><strong>32</strong><span>authority decisions</span></div></div>
+        <div class="rerun-callout">
+          <span class="scene-tag">Rerun the benchmark</span>
+          <code>python benchmark/pilot.py --dry-run</code>
+          <p>This deterministic check needs no model key. For a model-backed run and the full method, see <strong>benchmark/BENCHMARK.md</strong> in the repository.</p>
+        </div>
+        <p class="method-link-copy">The repository includes the frozen scenarios, runner, adapter, tests, and a deterministic dry run. The browser replay uses a whitelisted public export; private provider session metadata stays out of it.</p>
+      </div>
+      <aside class="limits-card" aria-labelledby="limits-title">
+        <div class="limits-heading"><span aria-hidden="true">!</span><h3 id="limits-title">Read this before drawing a conclusion</h3></div>
+        <ul id="limits-list"><li>Loading limitations…</li></ul>
+        <p>This is an AI behavior study inspired by questions about authority. It does not reproduce the Stanford Prison Experiment or tell us how people would behave. See the <a href="https://pubmed.ncbi.nlm.nih.gov/31380664/">archival critique</a> and <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12184514/">research on LLMs as human surrogates</a>.</p>
+      </aside>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-inner"><span>The Agentic Prison Experiment · public research replay</span><span>Independent project · unaffiliated with Stanford University</span></div>
+  </footer>
+  <noscript><p class="noscript-note">Enable JavaScript to use the interactive replay. The public JSON data pack remains available at <a href="data/v1-public.json">data/v1-public.json</a>.</p></noscript>
+</body>
+</html>
