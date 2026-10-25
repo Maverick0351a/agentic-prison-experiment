@@ -1,6 +1,6 @@
 # Agentic Authority Lab benchmark
 
-This is a public, re-runnable AI-only pilot about institutional role labels and review rules in a fictional, text-only facility. It measures one model's choices under written prompts. It does not reproduce the Stanford Prison Experiment or establish anything about human behavior. Read [PROTOCOL.md](PROTOCOL.md) before interpreting results.
+This is a public, re-runnable AI pilot about institutional role labels and review rules in a fictional, text-only facility. It measures one model's choices under written prompts. Read [PROTOCOL.md](PROTOCOL.md) before interpreting results.
 
 ## Run it
 

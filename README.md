@@ -52,8 +52,6 @@ flowchart LR
 
 ## What the result can and cannot say
 
-This experiment tests bounded policy choices by AI agents. It does not recreate human imprisonment or support conclusions about people. The classic Stanford Prison Experiment's methods have been challenged in an [archival review](https://pubmed.ncbi.nlm.nih.gov/31380664/), and [research on LLMs as human surrogates](https://pmc.ncbi.nlm.nih.gov/articles/PMC12184514/) finds that model choices can diverge from human choices.
-
 The first pilot has a strong ceiling: participants often quoted the applicable rule before the authority decided; cases were explicit; each dilemma had only one participant and one authority turn; and the provider did not expose a fixed sampling seed or immutable model revision. The public pack is a whitelist export of a private evidence run, not its complete provider event stream. An observed zero difference is not proof of equivalence. The [next experiment proposal](docs/NEXT_EXPERIMENT.md) tests whether policy-aware participant speech itself changes decisions and adds longer interaction. It is unrun.
 
 ## Repository map
