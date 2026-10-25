@@ -20,6 +20,8 @@ jobs:
           node --check docs/reciprocal.js
           node --check docs/data.js
           node --check docs/data-v2.js
+          node --check docs/conflict.js
+          node --check docs/data-v3.js
       - name: Exercise deterministic benchmarks
         run: |
           python benchmark/pilot.py --dry-run

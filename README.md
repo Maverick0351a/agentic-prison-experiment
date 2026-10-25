@@ -4,6 +4,8 @@
 
 ![Four matched AI authority conditions, each with zero unsupported proposals out of eight decisions](docs/assets/social-preview.png)
 
+**Latest result:** In v3, the Senior AI was assigned to argue for an unsupported hold. All four pressured Senior openings chose a nonrestrictive action instead, so Duty never received the intended conflicting recommendation. [Explore the v3 exchange](docs/index.html#conflict) and [read the audit](docs/CONFLICT_RESULTS.md).
+
 **What happens when the same AI is called a coordinator or a guard, and its decisions are either immediate or reviewed?**
 
 Explore a four-way replay of an AI-only authority experiment. Predict a decision, reveal what the agents did, compare the matched conditions, and inspect the rule behind each case. The browser replay needs no account, model key, install, or network connection. The benchmark can also be run locally.
@@ -31,6 +33,14 @@ The v2 run completed **12 episodes and 56 model calls**. Senior and Duty initial
 
 Run the separate offline dialogue harness with `python -m benchmark.reciprocal.runner --dry-run`. Its [frozen v2 protocol](benchmark/reciprocal/PROTOCOL_V2.md) and [public data pack](docs/data/v2-public.json) are included. The two pilots use different conversations and should be interpreted separately.
 
+## When the Senior was assigned to advocate a hold
+
+The [v3 replay](docs/index.html#conflict) compares ordinary Senior advice with an assigned hold-advocacy position in the same weak-evidence case. Reveal what Senior actually recommended before predicting Duty's reply, then follow Senior's answer to Duty, the Participant's response, and Duty's final choice.
+
+The scored run used **12 exchanges and 56 model calls**. All **4/4** pressured Senior openings declined to propose the unsupported hold. The ordinary weak-case openings chose `permit_or_restore`; the pressured openings chose `investigate`. Both choices left access unrestricted, and provisional Duty matched Senior's structured action in each exchange. This run observed **zero Duty exposures** to a conflicting Senior recommendation. In the four documented-entry controls, the Participant exited after a permitted one-round hold was proposed; final Duty outcomes were unobserved. The [v3 results and transcript audit](docs/CONFLICT_RESULTS.md) keep those limits visible.
+
+The [frozen v3 protocol](benchmark/conflict/PROTOCOL_V3.md), [public exchange pack](docs/data/v3-public.json), and deterministic check (`python -m benchmark.conflict.runner --dry-run`) are included. A follow-on controlled-directive test is being prepared to give Duty an actual conflicting authority message before the live two-way exchange.
+
 ## Rerun the benchmark
 
 Python's standard library is enough for the deterministic harness check:
@@ -52,12 +62,12 @@ flowchart LR
 
 ## What the result can and cannot say
 
-The first pilot has a strong ceiling: participants often quoted the applicable rule before the authority decided; cases were explicit; each dilemma had only one participant and one authority turn; and the provider did not expose a fixed sampling seed or immutable model revision. The public pack is a whitelist export of a private evidence run, not its complete provider event stream. An observed zero difference is not proof of equivalence. The [next experiment proposal](docs/NEXT_EXPERIMENT.md) tests whether policy-aware participant speech itself changes decisions and adds longer interaction. It is unrun.
+The first pilot has a strong ceiling: participants often quoted the applicable rule before the authority decided; cases were explicit; each dilemma had only one participant and one authority turn; and the provider did not expose a fixed sampling seed or immutable model revision. The public pack is a whitelist export of a private evidence run, not its complete provider event stream. An observed zero difference is not proof of equivalence. A separate [participant-speech proposal](docs/NEXT_EXPERIMENT.md) remains unrun.
 
 ## Repository map
 
-- `docs/` — static replays and sanitized v1/v2 data, with no external dependencies.
-- `benchmark/` — frozen v1 and reciprocal v2 runners, rules, scenarios, and model adapter.
+- `docs/` — static replays and sanitized v1/v2/v3 data, with no external dependencies.
+- `benchmark/` — frozen v1, reciprocal v2, and conflict v3 runners, rules, scenarios, and model adapter.
 - `scripts/` — validated whitelist exports from the private scored runs.
 - `tests/` — offline checks for the benchmark and export.
 

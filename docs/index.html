@@ -11,6 +11,8 @@
   <script src="app.js" defer></script>
   <script src="data-v2.js" defer></script>
   <script src="reciprocal.js" defer></script>
+  <script src="data-v3.js" defer></script>
+  <script src="conflict.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -24,6 +26,7 @@
       <nav aria-label="Main navigation">
         <a href="#replay">Replay</a>
         <a href="#reciprocal">Dialogue</a>
+        <a href="#conflict">Pressure</a>
         <a href="#findings">Findings</a>
         <a href="#method">Method</a>
       </nav>
@@ -40,7 +43,7 @@
           <p class="hero-lede">An AI authority simulation inspired by the Stanford Prison Experiment. Give an AI authority, change its role label, add independent review. Does it propose a restriction the written rules cannot support?</p>
           <div class="hero-actions">
             <a class="button button-light" href="#replay">Explore the decisions <span aria-hidden="true">↗</span></a>
-            <a class="text-link light-link" href="#method">See how it worked <span aria-hidden="true">→</span></a>
+            <a class="text-link light-link" href="#conflict">Explore the pressure test <span aria-hidden="true">→</span></a>
           </div>
           <p class="hero-boundary">Independent project · Unaffiliated with Stanford University.</p>
         </div>
@@ -184,6 +187,72 @@
             <ul id="reciprocal-limit-list"></ul>
           </aside>
           <p class="replay-footnote">Read the frozen v2 protocol in the repository and <a href="data/v2-public.json" download>download the public exchange pack</a>. Missing turns and stopped exchanges remain visible as such.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="conflict-section" id="conflict" aria-labelledby="conflict-title">
+      <div class="shell">
+        <div class="conflict-intro">
+          <div>
+            <p class="section-kicker">Authority pressure test / v3</p>
+            <h2 id="conflict-title">Will Duty follow the Senior?</h2>
+          </div>
+          <p>Compare an ordinary Senior recommendation with one prompted to advocate a hold. See what each Senior actually proposed, predict Duty's first move, then follow the answers in both directions.</p>
+        </div>
+        <p class="conflict-loading" id="conflict-loading" role="status">Loading the v3 public exchange pack…</p>
+        <div id="conflict-content" hidden>
+          <div class="conflict-finding" aria-live="polite">
+            <span class="scene-tag">Manipulation check</span>
+            <h3 id="conflict-finding-title"></h3>
+            <p id="conflict-finding-detail"></p>
+          </div>
+          <div class="conflict-controls">
+            <div class="field">
+              <label for="conflict-scenario">Choose a case</label>
+              <select id="conflict-scenario"></select>
+            </div>
+            <div class="field">
+              <label for="conflict-condition">Choose role labels and review</label>
+              <select id="conflict-condition"></select>
+            </div>
+            <p id="conflict-run-size" class="conflict-run-size"></p>
+          </div>
+          <div class="conflict-case">
+            <div><span class="scene-tag">The shared facts</span><h3 id="conflict-case-title"></h3><p id="conflict-event"></p></div>
+            <div class="conflict-case-rule"><span class="rule-label">Written rule</span><p id="conflict-rule"></p></div>
+          </div>
+          <div class="conflict-frame">
+            <div class="conflict-stage-topline">
+              <div><span class="scene-tag" id="conflict-stage-count">Before the exchange</span><h3 id="conflict-stage-title" aria-live="polite">Start with the Senior recommendation.</h3><p id="conflict-stage-description">The two arms share the case and condition. The prompted arm counts as pressure only if its Senior actually recommends an unsupported restriction.</p></div>
+              <span id="conflict-progress" class="conflict-progress">0 of 5 turns revealed</span>
+            </div>
+            <ol class="conflict-stepper" id="conflict-stepper" aria-label="Disagreement exchange turns"></ol>
+            <fieldset class="conflict-prediction" id="conflict-prediction" hidden>
+              <legend>Predict Duty's provisional structured action</legend>
+              <p id="conflict-prediction-target"></p>
+              <div class="conflict-prediction-options">
+                <label><input type="radio" name="conflict-prediction" value="same"><span>Same as Senior</span></label>
+                <label><input type="radio" name="conflict-prediction" value="different"><span>Different from Senior</span></label>
+                <label><input type="radio" name="conflict-prediction" value="unobserved"><span>No Duty action recorded</span></label>
+              </div>
+            </fieldset>
+            <p id="conflict-prediction-result" class="conflict-prediction-result" role="status" hidden></p>
+            <div class="conflict-grid" id="conflict-cards"></div>
+            <div class="conflict-actions">
+              <button class="button button-dark" id="conflict-next" type="button">Reveal Senior recommendations <span aria-hidden="true">→</span></button>
+              <button class="button button-plain" id="conflict-reset" type="button" hidden>Start over</button>
+            </div>
+          </div>
+          <aside class="conflict-reading" aria-labelledby="conflict-reading-title">
+            <h3 id="conflict-reading-title">Read the exchange closely</h3>
+            <ul>
+              <li>The advocacy prompt is an intervention; the Senior's recorded recommendation shows whether conflicting pressure actually occurred.</li>
+              <li>The action comparison uses structured choices. The written messages show whether Duty challenged, qualified, or accepted Senior's reasoning.</li>
+              <li>An exit or incomplete exchange leaves later decisions unobserved.</li>
+            </ul>
+          </aside>
+          <p class="replay-footnote">Inspect all observed turns in the <a href="data/v3-public.json" download>v3 public exchange pack</a> and read the <a href="https://github.com/Maverick0351a/agentic-prison-experiment/blob/main/benchmark/conflict/PROTOCOL_V3.md">frozen benchmark protocol</a>.</p>
         </div>
       </div>
     </section>

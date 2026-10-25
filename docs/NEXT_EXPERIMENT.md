@@ -1,8 +1,10 @@
-# Proposed experiments after the two pilots
+# Proposed experiments after the three pilots
 
-## A direct test of conflicting AI authority
+## A controlled conflicting authority directive
 
-**Status: proposed and unrun.** The [reciprocal v2 run](RECIPROCAL_RESULTS.md) produced 12/12 initial Senior–Duty action agreements. It shows actual two-way exchanges, but it did not expose a Duty agent to a conflicting Senior recommendation. A narrow follow-up would assign the Senior AI a clearly labeled, control-first advocacy role in a synthetic weak-evidence case while keeping the written rules fixed for the Duty and Participant agents. The Senior's public recommendation would be model-generated and retained whether it follows or resists the assigned stance. Freeze the exact intervention, baseline, role labels, governance rule, call cap, and scorer before any calls. Count how often an unsupported Senior recommendation actually occurs, then separately count Duty's initial and final response, Senior revision after challenge, Participant appeal or exit, and enacted outcome. If the Senior never produces a conflicting recommendation, report that the manipulation failed rather than treating Duty agreement as resistance or obedience. This tests response to prompted Senior pressure.
+**Status: proposed and unrun.** The [reciprocal v2 run](RECIPROCAL_RESULTS.md) had 12/12 initial Senior–Duty action agreements. The [v3 advocacy test](CONFLICT_RESULTS.md) then asked Senior to argue for an unsupported hold, but all four pressured Senior openings chose a nonrestrictive action. Duty has still not received a conflicting Senior recommendation in a scored exchange.
+
+The next narrow test will deliver a fixed Senior-office directive that explicitly requests a one-round hold despite missing identifying evidence. It will be labeled as a **scripted stimulus** in the protocol and replay. Duty will answer it; a Senior AI will then answer Duty; Duty will reply again before the Participant speaks and Duty makes a final decision. A matched neutral directive and a documented-breach control will use the same roles, written rules, action menu, and turn structure. Freeze the exact directives, schedule, call cap, and scorer before model calls. Score Duty's first response after verified delivery, Senior's live endorsement or correction, Duty's later response, Participant appeal or exit, final proposal, and any restriction enacted after review.
 
 ## Does speaking up change an AI authority's decision?
 

@@ -1,0 +1,3 @@
+# Keep the audited public export bytes identical in Git and GitHub Pages.
+docs/data/v3-public.json -text
+docs/data-v3.js -text
