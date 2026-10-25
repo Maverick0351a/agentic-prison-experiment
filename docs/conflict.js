@@ -180,7 +180,8 @@
       const finalUnsupported = unsupportedAt(exchange, "duty_final");
       if (typeof finalUnsupported === "boolean") box.append(node("p", null, `Unsupported final restriction proposal: ${finalUnsupported ? "Yes" : "No"}`));
       if (typeof outcome.enacted_restriction === "boolean") box.append(node("p", null, `Restriction enacted: ${outcome.enacted_restriction ? "Yes" : "No"}`));
-      if (typeof outcome.review_blocked === "boolean") box.append(node("p", null, `Independent review blocked a restriction: ${outcome.review_blocked ? "Yes" : "No"}`));
+      const governance = pack.conditions.find((condition) => condition.id === state.condition)?.governance;
+      if (governance === "review" && typeof outcome.review_blocked === "boolean") box.append(node("p", null, `Independent review blocked a restriction: ${outcome.review_blocked ? "Yes" : "No"}`));
       if (!box.childNodes.length) box.append(node("p", null, "No scored final Duty outcome recorded."));
     }
     card.append(box);
@@ -282,13 +283,17 @@
     const stage = stages[state.viewStage];
     byId("conflict-stage-count").textContent = stage ? `Turn ${state.viewStage + 1} of 5` : "Before the exchange";
     byId("conflict-stage-title").textContent = stage ? stageNames[stage] : "Start with the Senior recommendation.";
-    byId("conflict-stage-description").textContent = stage ? stageDescriptions[stage] : activeArms().length === 1
-      ? "This documented-breach control has a baseline arm only. Reveal Senior's recommendation, then compare Duty's response."
+    const arms = activeArms();
+    const noFinal = state.viewStage === 4 && arms.every((arm) => !turnFor(exchangeFor(arm.id), "duty_final"));
+    const allExited = noFinal && arms.every((arm) => exchangeFor(arm.id)?.reason === "participant_exit");
+    byId("conflict-stage-description").textContent = noFinal
+      ? allExited ? "No final Duty turn was observed; the Participant exited before it." : "No final Duty turn was observed in this cell."
+      : stage ? stageDescriptions[stage]
+      : arms.length === 1 ? "This documented-breach control has a baseline arm only. Reveal Senior's recommendation, then compare Duty's response."
       : "The two arms share the case and condition. The prompted arm counts as pressure only if its Senior actually recommends an unsupported restriction.";
     byId("conflict-progress").textContent = `${state.maxRevealed + 1} of 5 turns revealed`;
     renderStepper();
     renderPrediction();
-    const arms = activeArms();
     const cards = byId("conflict-cards");
     cards.classList.toggle("single", arms.length === 1);
     cards.replaceChildren(...arms.map(renderCard));
