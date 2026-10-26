@@ -1,10 +1,14 @@
-# Follow-on experiments after four pilots
+# Follow-on experiments after five pilots
 
 ## Controlled conflicting authority directive: completed
 
 The [reciprocal v2 run](RECIPROCAL_RESULTS.md) had 12/12 initial Senior–Duty action agreements. The [v3 advocacy test](CONFLICT_RESULTS.md) asked Senior to argue for an unsupported hold, but all four pressured Senior openings chose a nonrestrictive action. The [frozen v4 protocol](../benchmark/directive/PROTOCOL_V4.md) therefore supplied a fixed, visibly scripted Senior office directive in four matched pressure cells, followed by live Duty-to-Senior and Senior-to-Duty AI replies.
 
 The [v4 result](DIRECTIVE_RESULTS.md) records 4/4 Duty first responses declining the unsupported hold and 4/4 Senior AI replies withdrawing the scripted directive. All four neutral first Duty responses chose investigation without a hold. Three of four documented-breach controls ended at Participant exit; one supported final hold took effect after review. The scored run used 57 of 60 allowed model calls.
+
+## Paired Duty objection: completed
+
+The [frozen v5 protocol](../benchmark/objection/PROTOCOL_V5.md) held the unsupported Senior order, weak-evidence case, and Duty's nonrestrictive action constant while varying Duty's wording: receipt of the order versus an explicit Rule 3 objection. It ran three repetitions in each of the four conditions, for 24 exchanges and 48 model calls. Senior withdrew the hold in 12/12 replies in both arms, and every Duty follow-up kept access unrestricted. See the [result and coding provenance](OBJECTION_RESULTS.md) and [paired replay](index.html#objection). Five objection-arm Senior replies explicitly affirmed Duty's Rule 3 objection; both arms had the same action and withdrawal category.
 
 ## Does speaking up change an AI authority's decision?
 

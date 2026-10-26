@@ -484,3 +484,95 @@ h2 { margin: 0; font: 700 clamp(32px, 4vw, 49px)/1.1 Georgia, serif; letter-spac
   html { scroll-behavior: auto; }
   .button { transition: none; }
 }
+
+.objection-section { padding: 100px 0 108px; background: #e8ede8; border-top: 1px solid #d6e0d7; scroll-margin-top: 30px; }
+.objection-intro { display: grid; grid-template-columns: minmax(0, 1fr) minmax(280px, .7fr); gap: 44px; align-items: end; margin-bottom: 25px; }
+.objection-intro > p { margin: 0 0 4px; color: var(--ink-soft); font-size: 17px; }
+.objection-origin { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); gap: 20px; align-items: center; margin-bottom: 24px; padding: 19px 24px; border: 1px solid #c6d6ca; border-radius: 14px; background: #f8fbf6; }
+.objection-origin strong { font-size: 13px; color: #244e3a; }
+.objection-origin p { margin: 4px 0 0; color: #627166; font-size: 13px; }
+.objection-origin > span { color: #977337; font-size: 23px; }
+.objection-loading { margin: 0; padding: 21px 25px; border: 1px solid #c6d6ca; border-radius: 13px; background: #fffefa; color: #385144; }
+.objection-loading.error { border-color: #eebca9; background: #fae6df; color: #6c2c1d; }
+.objection-finding { margin-bottom: 24px; padding: 23px 27px; border: 1px solid #d8c093; border-radius: 14px; background: #fff5de; }
+.objection-finding .scene-tag { color: #835d2d; }
+.objection-finding h3 { margin: 7px 0 8px; font: 700 clamp(22px, 2.8vw, 31px)/1.16 Georgia, serif; letter-spacing: -.03em; }
+.objection-finding p { margin: 0; color: #655440; font-size: 14px; }
+.objection-controls { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, .9fr) auto; gap: 15px; align-items: end; margin-bottom: 18px; }
+.objection-run-size { margin: 0 0 10px; color: #65756b; font-size: 12px; white-space: nowrap; }
+.objection-case { padding: 24px 28px; border-radius: 15px; color: #eaf2ea; background: #17332d; }
+.objection-case > p { margin: 6px 0 14px; font-size: 15px; }
+.objection-case > div { padding: 14px 17px; border: 1px solid #688676; border-radius: 9px; background: rgba(255, 255, 255, .06); }
+.objection-case .rule-label { color: var(--gold); }
+.objection-case > div p { margin: 5px 0 0; font-size: 13px; }
+.objection-panel { margin-top: 19px; padding: clamp(20px, 3vw, 34px); border: 1px solid #d1dcd2; border-radius: 20px; background: var(--paper); box-shadow: var(--shadow); }
+.objection-stage-head { display: flex; justify-content: space-between; gap: 24px; align-items: start; }
+.objection-stage-head h3 { margin: 6px 0 8px; font: 700 29px/1.16 Georgia, serif; letter-spacing: -.03em; }
+.objection-stage-head p { max-width: 800px; margin: 0; color: #5b695f; font-size: 14px; }
+.objection-progress { flex: 0 0 auto; margin-top: 4px; padding: 7px 12px; border: 1px solid #c8d9cd; border-radius: 999px; color: #295e49; background: #f0f7ef; font-size: 12px; font-weight: 750; }
+.objection-stepper { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 9px; list-style: none; padding: 0; margin: 26px 0 23px; }
+.objection-stepper li { min-width: 0; }
+.objection-stepper button { display: flex; width: 100%; min-height: 62px; align-items: center; gap: 9px; padding: 9px 12px; border: 1px solid #d0dccc; border-radius: 10px; color: #3d584a; background: #f9fcf8; text-align: left; font-size: 12px; font-weight: 750; line-height: 1.25; }
+.objection-stepper button:disabled { color: #9aa89b; background: #f7f8f4; cursor: default; }
+.objection-stepper button:not(:disabled):hover { border-color: #659274; background: #eef6ee; }
+.objection-stepper button[aria-current="step"] { border-color: var(--mint-deep); background: #dff2e5; box-shadow: inset 0 0 0 1px var(--mint-deep); }
+.objection-step-num { flex: 0 0 27px; display: inline-flex; width: 27px; height: 27px; align-items: center; justify-content: center; border-radius: 50%; color: #2a5745; background: #deebe0; font-size: 12px; }
+.objection-stepper button[aria-current="step"] .objection-step-num { color: #fff; background: var(--mint-deep); }
+.objection-step-name { min-width: 0; }
+.objection-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 15px; }
+.objection-card { min-width: 0; padding: 21px; border: 1px solid #d6e0d6; border-radius: 15px; background: #fff; }
+.objection-card.objection { border-color: #e5c79d; background: #fffbf3; }
+.objection-card h4 { margin: 6px 0 4px; font: 700 22px/1.18 Georgia, serif; letter-spacing: -.025em; }
+.objection-card-description { margin: 0 0 13px; color: #69786e; font-size: 13px; }
+.objection-order { margin: 0 0 8px; color: #62756a; font-size: 12px; }
+.objection-card-status { display: inline-block; margin: 0 0 12px; padding: 4px 9px; border-radius: 999px; color: #245c46; background: #e4f2e7; font-size: 11px; font-weight: 800; }
+.objection-card-status.incomplete { color: #785523; background: #faecd1; }
+.objection-turn { min-height: 190px; padding: 16px 18px; border-left: 3px solid var(--mint-deep); border-radius: 0 9px 9px 0; background: #f0f6ef; }
+.objection-turn.scripted { border-left-color: #b57631; background: #fff2de; }
+.objection-origin-tag { display: inline-block; margin: 9px 0 0; padding: 3px 8px; border-radius: 6px; color: #275740; background: #e3eee3; font-size: 11px; font-weight: 850; letter-spacing: .05em; text-transform: uppercase; }
+.objection-origin-tag.scripted { color: #885622; background: #f9ddae; }
+.objection-speaker { display: block; margin-top: 6px; color: #28503a; font-size: 14px; font-weight: 800; }
+.objection-structured { margin: 8px 0 0; color: #496553; font-size: 12px; }
+.objection-turn code { color: #194c3a; font: 700 12px/1.4 Consolas, "Courier New", monospace; overflow-wrap: anywhere; }
+.objection-turn blockquote { margin: 9px 0 0; color: #2b3c31; font-size: 15px; line-height: 1.54; white-space: pre-wrap; overflow-wrap: anywhere; }
+.objection-missing { margin: 9px 0 0; color: #6e746b; font-size: 14px; font-style: italic; }
+.objection-audit { margin: 15px 0 0; padding: 10px 12px; border: 1px solid #d8e0d2; border-radius: 8px; color: #315744; background: #f2f8ef; font-size: 12px; font-weight: 750; }
+.objection-audit.ambiguous { border-color: #eac89b; color: #7c4d22; background: #fff1dc; }
+.objection-audit-reason { margin: 6px 0 0; color: #5a675c; font-size: 12px; }
+.objection-card details { margin-top: 14px; border-top: 1px solid #e4eae0; }
+.objection-card details summary { padding: 10px 1px; color: #24533e; font-size: 13px; font-weight: 750; cursor: pointer; }
+.objection-history { margin: 0 0 10px; padding-left: 21px; }
+.objection-history li { padding: 9px 0; border-top: 1px solid #edf1ea; }
+.objection-history li:first-child { border-top: 0; }
+.objection-history strong { display: block; color: #2d5140; font-size: 12px; }
+.objection-history small { display: block; color: #718075; font-size: 11px; }
+.objection-history p { margin: 5px 0 0; color: #536458; font-size: 12px; white-space: pre-wrap; overflow-wrap: anywhere; }
+.objection-actions { display: flex; flex-wrap: wrap; gap: 11px; margin-top: 23px; }
+.objection-reading { display: grid; grid-template-columns: minmax(190px, .35fr) minmax(0, 1fr); gap: 25px; margin-top: 23px; padding: 22px 26px; border: 1px solid #d1dccf; border-radius: 13px; background: #f4f7f0; }
+.objection-reading h3 { margin: 0; font: 700 21px/1.2 Georgia, serif; }
+.objection-reading p { margin: 0; color: #5a6558; font-size: 13px; }
+.objection-section .replay-footnote { margin-top: 19px; }
+.objection-section .replay-footnote a { color: #136e5a; font-weight: 750; }
+
+@media (max-width: 1000px) {
+  .objection-controls { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .objection-run-size { grid-column: 1 / -1; margin: 0; }
+}
+@media (max-width: 750px) {
+  .objection-section { padding-block: 78px 85px; }
+  .objection-intro, .objection-reading, .objection-grid { grid-template-columns: minmax(0, 1fr); }
+  .objection-intro > p { margin-top: 15px; }
+  .objection-stage-head { display: block; }
+  .objection-progress { display: inline-block; margin-top: 15px; }
+}
+@media (max-width: 540px) {
+  .objection-origin { grid-template-columns: minmax(0, 1fr); gap: 10px; padding: 20px; }
+  .objection-origin > span { transform: rotate(90deg); transform-origin: left center; margin-left: 9px; }
+  .objection-controls { grid-template-columns: minmax(0, 1fr); }
+  .objection-run-size { grid-column: auto; }
+  .objection-case, .objection-finding, .objection-panel, .objection-reading { padding: 20px; }
+  .objection-stepper { gap: 4px; }
+  .objection-stepper button { min-height: 48px; justify-content: center; padding: 5px 2px; }
+  .objection-step-name { display: none; }
+  .objection-actions { display: grid; }
+}

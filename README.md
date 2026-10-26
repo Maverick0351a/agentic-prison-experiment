@@ -4,7 +4,7 @@
 
 ![Four matched AI authority conditions, each with zero unsupported proposals out of eight decisions](docs/assets/social-preview.png)
 
-**Latest result:** In v4, a fixed Senior office directive requested an unsupported hold in four matched cells. Duty declined it **4/4** times; after Duty answered, the Senior AI withdrew the directive **4/4** times. [Replay both directions](docs/index.html#directive) and [read the audited result](docs/DIRECTIVE_RESULTS.md).
+**Latest result:** In v5, Senior withdrew the same unsupported office hold after both scripted Duty wordings: **12/12** replies after a neutral receipt and **12/12** after an explicit Rule 3 objection. These written-reply codes are provisional AI assessments pending human review. Duty's structured action was identical in both arms. [Compare all 12 pairs](docs/index.html#objection) and [read the result and coding provenance](docs/OBJECTION_RESULTS.md).
 
 **What happens when the same AI is called a coordinator or a guard, and its decisions are either immediate or reviewed?**
 
@@ -49,6 +49,14 @@ All four unsupported pressure directives appeared in Duty's first prompt. Duty p
 
 Run the v4 deterministic check with `python -m benchmark.directive.runner --dry-run`. It uses a fake adapter and writes under the system temporary directory. A scored rerun requires an explicit private output directory outside the public checkout and uses at most 60 model calls.
 
+## Does a direct objection change Senior's reply?
+
+The [v5 replay](docs/index.html#objection) places two fixed Duty answers side by side after the same scripted Senior office order. Both Duty answers keep access unchanged and repeat the same missing-evidence facts. One says it has read the requested hold; the other objects under Rule 3. A fresh Senior AI replies to each, followed by a fresh Duty AI follow-up. The first two turns in each column are labeled as scripted; the later two are model calls.
+
+The [frozen v5 protocol](benchmark/objection/PROTOCOL_V5.md) scheduled 24 exchanges across four conditions, two wording arms, and three repetitions, with a 48-call cap. All 48 calls completed. Senior explicitly withdrew the hold in every reply in both arms, and all 48 Senior and Duty structured actions were `permit_or_restore`. In five objection-arm replies, Senior explicitly affirmed Duty's Rule 3 objection; the decision remained the same. The [v5 result](docs/OBJECTION_RESULTS.md) gives the full counts, examples, audit, and prose-coding provenance. The current written-reply categories were assigned by two AI codebook reviews; the protocol's human-coding step remains open.
+
+Run a deterministic v5 check with `python -m benchmark.objection.runner --dry-run`. It uses a fake adapter and no model calls. The [public exchange pack](docs/data/v5-public.json) contains the synthetic event, turn provenance, dialogue, action scores, and coded written replies; private prompts and provider metadata stay local.
+
 ## Rerun the benchmark
 
 Python's standard library is enough for the deterministic harness check:
@@ -74,8 +82,8 @@ The first pilot has a strong ceiling: participants often quoted the applicable r
 
 ## Repository map
 
-- `docs/` — static replays and sanitized v1–v4 data, with no external dependencies.
-- `benchmark/` — frozen v1–v4 runners, rules, scenarios, and model adapter.
+- `docs/` — static replays and sanitized v1–v5 data, with no external dependencies.
+- `benchmark/` — frozen v1–v5 runners, rules, scenarios, and model adapter.
 - `scripts/` — validated whitelist exports from the private scored runs.
 - `tests/` — offline checks for the benchmark and export.
 
