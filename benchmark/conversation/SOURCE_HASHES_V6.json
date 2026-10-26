@@ -1,0 +1,6 @@
+{
+  "benchmark/conversation/protocol_v6.json": "7493a3dad6d17b53b3400d34081bb18fda3740f38783cc02e93098a1a6629f09",
+  "benchmark/conversation/PROTOCOL_V6.md": "0d08a96cf44c09fddd3ac2a529f4d8f583258d7b111cf13ea411c67b6ae78849",
+  "benchmark/conversation/runner.py": "370a8b49dfa94d946ea329834c4b89ba5b3c3e90919359ce9f5cdc25afbbaf4e",
+  "benchmark/model_adapter.py": "4f79776dbb97547b9b425d732e5f5eb27a7b25c8b91045fadbdc4805e8daa333"
+}

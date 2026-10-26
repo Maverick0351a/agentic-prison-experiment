@@ -26,6 +26,8 @@ jobs:
           node --check docs/data-v4.js
           node --check docs/objection.js
           if [ -f docs/data-v5.js ]; then node --check docs/data-v5.js; fi
+          if [ -f docs/conversation.js ]; then node --check docs/conversation.js; fi
+          if [ -f docs/data-v6.js ]; then node --check docs/data-v6.js; fi
       - name: Exercise deterministic benchmarks
         run: |
           python benchmark/pilot.py --dry-run
@@ -33,3 +35,4 @@ jobs:
           python -m benchmark.conflict.runner --dry-run
           python -m benchmark.directive.runner --dry-run
           python -m benchmark.objection.runner --dry-run
+          python -m benchmark.conversation.runner --dry-run
