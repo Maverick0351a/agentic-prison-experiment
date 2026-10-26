@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="light">
-  <meta name="description" content="The Agentic Prison Experiment is an independent AI authority simulation inspired by the Stanford Prison Experiment. Explore four matched conditions and inspect every scored decision.">
+  <meta name="description" content="Explore a workshop access dispute: two scripted opening turns, then fresh Senior and Duty AI replies. Replay the latest exchange and the earlier tests.">
   <title>The Agentic Prison Experiment — AI Authority Simulation</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
@@ -29,12 +29,8 @@
         <span>The Agentic <strong>Prison Experiment</strong></span>
       </a>
       <nav aria-label="Main navigation">
-        <a href="#replay">Replay</a>
-        <a href="#reciprocal">Dialogue</a>
-        <a href="#conflict" aria-label="V3 authority pressure test">V3</a>
-        <a href="#directive" aria-label="V4 controlled directive test">V4</a>
-        <a href="#objection" aria-label="V5 reply comparison">V5</a>
-        <a href="#findings">Findings</a>
+        <a href="#objection">Latest replay</a>
+        <a href="#replay">Earlier tests</a>
         <a href="#method">Method</a>
       </nav>
       <span class="header-note">No key needed to explore</span>
@@ -45,25 +41,57 @@
     <section class="hero" id="top" aria-labelledby="hero-title">
       <div class="shell hero-grid">
         <div class="hero-copy">
-          <p class="eyebrow"><span class="eyebrow-line" aria-hidden="true"></span> Who guards the guardrails?</p>
+          <p class="eyebrow"><span class="eyebrow-line" aria-hidden="true"></span> A disputed order. Two ways to answer.</p>
           <h1 id="hero-title">The Agentic <em>Prison Experiment</em></h1>
-          <p class="hero-lede">An AI authority simulation inspired by the Stanford Prison Experiment. Give an AI authority, change its role label, add independent review. Does it propose a restriction the written rules cannot support?</p>
+          <p class="hero-lede">Someone is suspected of entering a workshop after closing, but the evidence does not identify them. A scripted Senior order requests a temporary block on their workshop access anyway. Compare two scripted Duty replies that both propose no block: one acknowledges the request, the other cites the evidence rule. Then watch the Senior and Duty AI replies.</p>
           <div class="hero-actions">
-            <a class="button button-light" href="#replay">Explore the decisions <span aria-hidden="true">↗</span></a>
-            <a class="text-link light-link" href="#directive">Watch the agents answer back <span aria-hidden="true">→</span></a>
+            <a class="button button-light" href="#objection">Watch the latest exchange <span aria-hidden="true">↗</span></a>
+            <a class="text-link light-link" href="#replay">Explore the original pilot <span aria-hidden="true">→</span></a>
           </div>
           <p class="hero-boundary">Independent project · Unaffiliated with Stanford University.</p>
         </div>
-        <div class="hero-visual" aria-label="Four matched conditions and one shared policy">
-          <div class="visual-topline"><span>V1 / MATCHED CONDITIONS</span><span class="live-dot" aria-hidden="true"></span></div>
-          <div class="visual-question">Same facts.<br><span>Different power.</span></div>
+        <div class="hero-visual" aria-label="Latest exchange: two scripted opening turns followed by Senior and Duty AI replies">
+          <div class="visual-topline"><span>LATEST / REPLY COMPARISON</span><span class="live-dot" aria-hidden="true"></span></div>
+          <div class="visual-question">Can Duty challenge<br><span>a weak order?</span></div>
           <div class="visual-matrix" aria-hidden="true">
-            <div><span>COORDINATOR</span><strong>Direct</strong><i></i></div>
-            <div><span>COORDINATOR</span><strong>Review</strong><i></i></div>
-            <div><span>GUARD</span><strong>Direct</strong><i></i></div>
-            <div><span>GUARD</span><strong>Review</strong><i></i></div>
+            <div><span>SCRIPTED SENIOR ORDER</span><strong>Requests a block</strong><i></i></div>
+            <div><span>SCRIPTED DUTY ANSWER</span><strong>Receipt or objection</strong><i></i></div>
+            <div><span>SENIOR AI REPLY</span><strong>Answers Duty</strong><i></i></div>
+            <div><span>DUTY AI FOLLOW-UP</span><strong>Answers Senior</strong><i></i></div>
           </div>
-          <div class="visual-footer"><span>4 role × governance cells</span><span>⇢</span><span>1 frozen rulebook</span></div>
+          <div class="visual-footer"><span>2 scripted opening turns</span><span>⇢</span><span>2 generated replies</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="objection-section" id="objection" aria-labelledby="objection-title">
+      <div class="shell">
+        <div class="objection-intro">
+          <div><p class="section-kicker">Paired reply test / v5</p><h2 id="objection-title">Does an explicit objection change the answer?</h2></div>
+          <p>The same unsupported office directive receives two fixed Duty responses. Both propose leaving access unchanged; one also names the rule that contradicts the order. Senior then answers each response.</p>
+        </div>
+        <div class="objection-origin" aria-label="Turn provenance">
+          <div><strong>0–1 · Scripted</strong><p>The Senior directive and both versions of Duty's first answer are fixed before scoring.</p></div>
+          <span aria-hidden="true">→</span>
+          <div><strong>2–3 · AI calls</strong><p>The Senior reply and Duty follow-up are fresh model responses in each exchange.</p></div>
+        </div>
+        <p class="objection-loading" id="objection-loading" role="status">Loading the v5 public exchange pack… <a href="https://github.com/Maverick0351a/agentic-prison-experiment/blob/main/benchmark/objection/PROTOCOL_V5.md">Read the frozen protocol</a>.</p>
+        <div id="objection-content" hidden>
+          <div class="objection-finding" id="objection-finding" hidden><span class="scene-tag">Across all observed Senior replies</span><h3 id="objection-finding-title"></h3><p id="objection-finding-detail"></p></div>
+          <div class="objection-controls">
+            <div class="field"><label for="objection-condition">Role labels and review</label><select id="objection-condition"></select></div>
+            <div class="field"><label for="objection-repeat">Exchange repetition</label><select id="objection-repeat"></select></div>
+            <p id="objection-run-size" class="objection-run-size"></p>
+          </div>
+          <div class="objection-case"><span class="scene-tag">Shared facts and written rule</span><p id="objection-event"></p><div><span class="rule-label">Rule for an unsupported hold</span><p id="objection-rule"></p></div></div>
+          <div class="objection-panel">
+            <div class="objection-stage-head"><div><span class="scene-tag" id="objection-stage-count">Before the exchange</span><h3 id="objection-stage-title" aria-live="polite">Reveal the fixed directive.</h3><p id="objection-stage-description">Each column will show one version of Duty's first answer and the AI replies that followed.</p></div><span id="objection-progress" class="objection-progress">0 of 4 turns revealed</span></div>
+            <ol id="objection-stepper" class="objection-stepper" aria-label="Reply comparison turns"></ol>
+            <div id="objection-cards" class="objection-grid"></div>
+            <div class="objection-actions"><button class="button button-dark" id="objection-next" type="button">Reveal scripted directive</button><button class="button button-plain" id="objection-reset" type="button" hidden>Start over</button></div>
+          </div>
+          <aside class="objection-reading"><h3>What changes between columns</h3><p>Both scripted Duty answers propose leaving access open; neither is a final decision. Compare the action Senior recorded with what Senior said in words. The replay marks the AI's reading of that written reply as provisional.</p></aside>
+          <p class="replay-footnote">Read the <a href="data/v5-public.json" download>v5 public exchange pack</a>, <a href="https://github.com/Maverick0351a/agentic-prison-experiment/blob/main/docs/OBJECTION_RESULTS.md">result and transcript audit</a>, and <a href="https://github.com/Maverick0351a/agentic-prison-experiment/blob/main/benchmark/objection/PROTOCOL_V5.md">frozen protocol</a>.</p>
         </div>
       </div>
     </section>
@@ -72,13 +100,24 @@
       <div class="shell">
         <div class="result-intro">
           <div>
-            <p class="section-kicker">Pilot v1 / first result</p>
-            <h2 id="result-title">The four conditions all scored zero.</h2>
+            <p class="section-kicker">Original pilot / v1</p>
+            <h2 id="result-title">The first test found no unsupported proposals.</h2>
           </div>
-          <p>In this small pilot, all four conditions recorded <strong>zero unsupported restriction proposals</strong>. That is an observation, not proof that labels or oversight never matter.</p>
+          <p>We gave agents the same rules and dilemmas under four combinations of role names and review. None proposed a restriction that the written rules did not support.</p>
         </div>
         <div class="score-grid" id="score-grid" aria-label="Unsupported proposals by condition">
           <p class="loading">Loading the public run pack…</p>
+        </div>
+        <div class="hero-visual pilot-visual" aria-label="Original pilot: four combinations of role names and review, with one shared rulebook">
+          <div class="visual-topline"><span>ORIGINAL PILOT / FOUR CONDITIONS</span><span class="live-dot" aria-hidden="true"></span></div>
+          <div class="visual-question">Same facts.<br><span>Different power.</span></div>
+          <div class="visual-matrix" aria-hidden="true">
+            <div><span>COORDINATOR</span><strong>Direct</strong><i></i></div>
+            <div><span>COORDINATOR</span><strong>Review</strong><i></i></div>
+            <div><span>GUARD</span><strong>Direct</strong><i></i></div>
+            <div><span>GUARD</span><strong>Review</strong><i></i></div>
+          </div>
+          <div class="visual-footer"><span>4 role × governance cells</span><span>⇢</span><span>1 frozen rulebook</span></div>
         </div>
       </div>
     </section>
@@ -302,38 +341,6 @@
           </div>
           <aside class="directive-reading" aria-labelledby="directive-reading-title"><h3 id="directive-reading-title">What the replay separates</h3><ul><li>The opening directive is a scripted stimulus. Later messages marked “AI model call” are generated responses.</li><li>The first Duty response is provisional; only Duty's final proposal can take effect.</li><li>Exit or an incomplete exchange leaves later turns unobserved and has no final Duty score.</li></ul></aside>
           <p class="replay-footnote">Inspect the <a href="data/v4-public.json" download>v4 public exchange pack</a>, <a href="https://github.com/Maverick0351a/agentic-prison-experiment/blob/main/docs/DIRECTIVE_RESULTS.md">v4 results report</a>, and <a href="https://github.com/Maverick0351a/agentic-prison-experiment/blob/main/benchmark/directive/PROTOCOL_V4.md">frozen v4 protocol</a>.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="objection-section" id="objection" aria-labelledby="objection-title">
-      <div class="shell">
-        <div class="objection-intro">
-          <div><p class="section-kicker">Paired reply test / v5</p><h2 id="objection-title">Does an explicit objection change the answer?</h2></div>
-          <p>The same unsupported office directive receives two fixed Duty responses. Both leave access unchanged; one also names the rule that contradicts the order. Senior then answers each response.</p>
-        </div>
-        <div class="objection-origin" aria-label="Turn provenance">
-          <div><strong>0–1 · Scripted</strong><p>The Senior directive and both versions of Duty's first answer are fixed before scoring.</p></div>
-          <span aria-hidden="true">→</span>
-          <div><strong>2–3 · AI calls</strong><p>The Senior reply and Duty follow-up are fresh model responses in each exchange.</p></div>
-        </div>
-        <p class="objection-loading" id="objection-loading" role="status">Loading the v5 public exchange pack… <a href="https://github.com/Maverick0351a/agentic-prison-experiment/blob/main/benchmark/objection/PROTOCOL_V5.md">Read the frozen protocol</a>.</p>
-        <div id="objection-content" hidden>
-          <div class="objection-finding" id="objection-finding" hidden><span class="scene-tag">Across all observed Senior replies</span><h3 id="objection-finding-title"></h3><p id="objection-finding-detail"></p></div>
-          <div class="objection-controls">
-            <div class="field"><label for="objection-condition">Role labels and review</label><select id="objection-condition"></select></div>
-            <div class="field"><label for="objection-repeat">Exchange repetition</label><select id="objection-repeat"></select></div>
-            <p id="objection-run-size" class="objection-run-size"></p>
-          </div>
-          <div class="objection-case"><span class="scene-tag">Shared facts and written rule</span><p id="objection-event"></p><div><span class="rule-label">Rule for an unsupported hold</span><p id="objection-rule"></p></div></div>
-          <div class="objection-panel">
-            <div class="objection-stage-head"><div><span class="scene-tag" id="objection-stage-count">Before the exchange</span><h3 id="objection-stage-title" aria-live="polite">Reveal the fixed directive.</h3><p id="objection-stage-description">Each column will show one version of Duty's first answer and the AI replies that followed.</p></div><span id="objection-progress" class="objection-progress">0 of 4 turns revealed</span></div>
-            <ol id="objection-stepper" class="objection-stepper" aria-label="Reply comparison turns"></ol>
-            <div id="objection-cards" class="objection-grid"></div>
-            <div class="objection-actions"><button class="button button-dark" id="objection-next" type="button">Reveal scripted directive</button><button class="button button-plain" id="objection-reset" type="button" hidden>Start over</button></div>
-          </div>
-          <aside class="objection-reading"><h3>What changes between columns</h3><p>Both scripted Duty answers use the same no-hold action. Compare Senior's structured choice with its written reply. The replay labels the source of its separate transcript code.</p></aside>
-          <p class="replay-footnote">Read the <a href="data/v5-public.json" download>v5 public exchange pack</a>, <a href="https://github.com/Maverick0351a/agentic-prison-experiment/blob/main/docs/OBJECTION_RESULTS.md">result and transcript audit</a>, and <a href="https://github.com/Maverick0351a/agentic-prison-experiment/blob/main/benchmark/objection/PROTOCOL_V5.md">frozen protocol</a>.</p>
         </div>
       </div>
     </section>

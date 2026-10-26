@@ -1,6 +1,6 @@
-# Agentic Authority Lab benchmark
+# Original benchmark (run 1)
 
-This is a public, re-runnable AI pilot about institutional role labels and review rules in a fictional, text-only facility. It measures one model's choices under written prompts. Read [PROTOCOL.md](PROTOCOL.md) before interpreting results.
+This page describes the **first** eight-episode experiment and its 64-call limit. Its commands do not rerun the latest paired dialogue. For the current result, start with the [plain-language overview](../README.md) and [run 5 protocol](objection/PROTOCOL_V5.md). Read [PROTOCOL.md](PROTOCOL.md) before interpreting run 1.
 
 ## Run it
 

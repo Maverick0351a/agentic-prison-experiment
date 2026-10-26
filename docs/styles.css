@@ -76,6 +76,7 @@ a { color: inherit; }
 .visual-matrix i { width: 7px; height: 7px; position: absolute; right: 16px; bottom: 17px; border-radius: 50%; background: #bedccc; }
 .visual-footer { margin-top: 22px; letter-spacing: .025em; text-transform: none; }
 .visual-footer span:nth-child(2) { color: var(--gold); font-size: 20px; }
+.pilot-visual { max-width: 560px; min-height: 0; margin: 34px auto 0; transform: none; }
 
 .result-strip { padding: 76px 0 82px; background: #e9f0ea; }
 .result-intro { display: flex; justify-content: space-between; gap: 50px; align-items: end; margin-bottom: 26px; }
