@@ -105,7 +105,12 @@ def build_public(source: Path) -> dict:
     for ep in rebuilt:
         case = runner.item(p, "scenarios", ep["scenario"])
         public = {k: ep[k] for k in ("id", "scenario", "condition", "status", "stop_reason", "turns")}
-        public.update({"title": case["title"], "event": case["event"], "outcome": runner.final_outcome(ep, case)})
+        outcome = runner.final_outcome(ep, case)
+        # The frozen flag means access restored by lifting a prior hold.
+        # Clarify the display label without changing that flag or any score.
+        if outcome["prior_hold_restored"] is True:
+            outcome["effect"] = "Prior hold lifted; access restored"
+        public.update({"title": case["title"], "event": case["event"], "outcome": outcome})
         conversations.append(public)
     pack = {"schema_version": "6.0.0", "title": "Supervisor, Officer, and Participant in conversation",
             "model": p["model_route"], "run_date_utc": manifest["created_utc"][:10],

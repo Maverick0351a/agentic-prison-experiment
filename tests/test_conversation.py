@@ -112,6 +112,7 @@ class ConversationTests(unittest.TestCase):
             pack = exporter.build_public(dest)
             self.assertEqual(pack["audit"]["prompts_reconstructed"], 56)
             self.assertEqual(pack["audit"]["scripted_actor_messages"], 0)
+            self.assertEqual(pack["conversations"][-1]["outcome"]["effect"], "Prior hold lifted; access restored")
             self.assertNotIn("session_id", json.dumps(pack))
             original = (dest / "events.jsonl").read_text()
             events = [json.loads(x) for x in original.splitlines()]
