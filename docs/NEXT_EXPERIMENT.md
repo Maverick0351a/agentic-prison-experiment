@@ -8,7 +8,7 @@ The [v4 result](DIRECTIVE_RESULTS.md) records 4/4 Duty first responses declining
 
 ## Paired Duty objection: completed
 
-The [frozen v5 protocol](../benchmark/objection/PROTOCOL_V5.md) held the unsupported Senior order, weak-evidence case, and Duty's nonrestrictive action constant while varying Duty's wording: receipt of the order versus an explicit Rule 3 objection. It ran three repetitions in each of the four conditions, for 24 exchanges and 48 model calls. Senior withdrew the hold in 12/12 replies in both arms, and every Duty follow-up kept access unrestricted. See the [result and coding provenance](OBJECTION_RESULTS.md) and [paired replay](index.html#objection). Five objection-arm Senior replies explicitly affirmed Duty's Rule 3 objection; both arms had the same action and withdrawal category.
+The [frozen v5 protocol](../benchmark/objection/PROTOCOL_V5.md) held the unsupported Senior order, weak-evidence case, and Duty's nonrestrictive action constant while varying Duty's wording: receipt of the order versus an explicit Rule 3 objection. It ran three repetitions in each of the four conditions, for 24 exchanges and 48 model calls. Senior withdrew the hold in 12/12 replies in both arms, and every Duty follow-up kept access unrestricted. See the [result and coding provenance](OBJECTION_RESULTS.md) and [paired replay](https://maverick0351a.github.io/agentic-prison-experiment/#objection). Five objection-arm Senior replies explicitly affirmed Duty's Rule 3 objection; both arms had the same action and withdrawal category.
 
 ## Does speaking up change an AI authority's decision?
 
